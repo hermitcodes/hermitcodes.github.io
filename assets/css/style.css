@@ -1,0 +1,333 @@
+:root {
+  --bg-color: #222;
+  --text-color: #eee;
+  --primary-color: #111;
+  --secondary-color: #ccc;
+
+  --card-color: #444;
+
+  /* Layout */
+  --container: 540px;
+
+  /* Sizing */
+  --base: 16px;
+  --size-xs: 0.75rem;
+  --size-sm: 0.875rem;
+  --size-md: 1rem;
+  --size-lg: 1.25rem;
+  --size-xl: 1.5rem;
+  --size-xxl: 2rem;
+
+  /* Radius */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 24px;
+  --radius-lg: 32px;
+  --radius-xl: 48px;
+  --radius-circle: 100%;
+}
+
+/* 
+==========================
+          Reset  
+==========================
+*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Sarabun', sans-serif;
+  font-size: var(--base);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: all 200ms ease-in-out;
+  font-size: var(--size-md);
+}
+
+body.switch-theme {
+  --bg-color: #eee;
+  --text-color: #222;
+  --primary-color: #ddd;
+  --secondary-color: #111;
+
+  --card-color: #bbb;
+}
+
+a,
+img,
+button {
+  display: block;
+}
+
+a,
+i,
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+i {
+  font-size: var(--size-lg);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+}
+
+/* 
+==========================
+        Reusable
+==========================
+*/
+
+/* Card */
+.card {
+  background-color: var(--card-color);
+  padding: var(--size-sm);
+  border-radius: var(--size-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-md);
+}
+
+/* 
+==========================
+          Header
+==========================
+*/
+
+.header {
+  background-color: var(--primary-color);
+  width: 100%;
+  height: calc(var(--size-xxl) * 2.25);
+}
+
+
+/* 
+==========================
+          Navbar
+==========================
+*/
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.navbar__brand {
+  font-weight: 200;
+  letter-spacing: -0.6px;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.navbar__list {
+  display: flex;
+  gap: var(--size-md);
+}
+
+.navbar__item {
+  position: relative;
+}
+
+.navbar__lang {
+  position: absolute;
+  background-color: var(--bg-color);
+  width: 90px;
+  top: var(--size-xxl);
+  right: var(--size-xxl);
+  border-radius: var(--radius-sm);
+  animation: popup 0.3s ease-in-out;
+}
+
+@keyframes popup {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.navbar__lang li {
+  padding: 8px var(--size-xs);
+  cursor: pointer;
+  font-size: var(--size-xs);
+  margin: 4px;
+  transition: background-color 0.2s;
+}
+
+.navbar__lang li:hover {
+  background-color: var(--card-color);
+  border-radius: var(--radius-xs);
+}
+
+/* 
+==========================
+          Main
+==========================
+*/
+
+.main {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navbar,
+.main {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Profile */
+
+.profile .card__body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-xs);
+}
+
+.profile__image {
+  border-radius: var(--radius-circle);
+  padding-inline: calc(var(--size-xxl) * 2);
+}
+
+.profile__bio {
+  font-size: var(--size-xs);
+  font-style: italic;
+}
+
+
+/* Social */
+.social__list {
+  display: flex;
+  justify-content: space-around;
+  margin-inline: var(--size-md);
+}
+
+/* Content */
+
+.content__tab {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 1000;
+}
+
+.content__tab.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.content__tab * {  
+  max-width: var(--container);
+}
+
+.content__tab header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  margin-inline: auto;
+}
+
+.content__tab--close i {
+  font-size: var(--size-xxl);
+}
+
+.content__nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--size-xs);
+}
+
+.content__btn {
+  padding: var(--size-xs) var(--size-sm);
+  border-radius: var(--radius-xs);
+  background-color: var(--primary-color);
+}
+
+/* 
+==========================
+          Footer
+==========================
+*/
+
+.footer {
+  background-color: var(--primary-color);
+  padding-block: var(--size-xs);
+}
+
+.copyright {
+  font-size: 0.75rem;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+
+/* 
+==========================
+        Utilities
+==========================
+*/
+
+.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}

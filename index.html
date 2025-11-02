@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hermit Codes</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+    rel="stylesheet">
+  <!-- Box Icon -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+
+<body>
+
+  <header class="header">
+    <nav class="navbar">
+      <a href="#" class="navbar__brand" role="button">Hermit Codes</a>
+      <ul class="navbar__list">
+        <li class="navbar__item">
+          <button class="navbar__btn" data-lang-toggler>
+            <i class='bx bx-globe'></i>
+          </button>
+        </li>
+        <li class="navbar__item">
+          <button class="navbar__btn" data-theme-toggler>
+            <i class='bx bx-sun'></i>
+          </button>
+          <ul class="navbar__lang hidden">
+            <li data-lang="en">English</li>
+            <li data-lang="th">ภาษาไทย</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="profile">
+      <div class="card">
+        <div class="card__header">
+          <figure class="profile__cover">
+            <img src="assets/images/crackerdelicious.png" alt="profile image" class="profile__image">
+          </figure>
+        </div>
+        <div class="card__body">
+          <h1 class="card__title">Cracker Delicious</h1>
+          <p class="profile__designation">Full-stack Developer</p>
+          <p class="profile__bio">I love eating cracker before getting eaten.</p>
+        </div>
+        <div class="card__footer">
+          <ul class="social__list">
+            <li class="social__item">
+              <a href="https://github.com/hermitcodes" target="_blank" role="button"
+                aria-label="See Github Repository" title="hermitcodes" class="social__link">
+                <i class='bx bxl-github'></i>
+              </a>
+            </li>
+            <li class="social__item">
+              <a href="https://www.figma.com/@hermitcodes" target="_blank" role="button"
+                aria-label="Discover Figma Profile" title="@hermitcodes" class="social__link">
+                <i class='bx bxl-figma'></i>
+              </a>
+            </li>
+            <li class="social__item">
+              <a href="https://www.youtube.com/@hermit-codes" target="_blank" role="button"
+                aria-label="Watch Youtube Channel" class="social__link">
+                <i class='bx bxl-youtube'></i>
+              </a>
+            </li>
+            <li class="social__item">
+              <a href="https://discord.gg/wtfE8Rw6PB" target="_blank" role="button" aria-label="Join Discord"
+                class="social__link">
+                <i class='bx bxl-discord-alt'></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <nav class="content__nav">
+          <button class="content__btn" data-tab="about">About</button>
+          <button class="content__btn" data-tab="project">Project</button>
+          <button class="content__btn" data-tab="contact">Contact</button>
+        </nav>
+      </div>
+    </section>
+
+    <section class="content">
+      <article class="content__tab" id="about">
+        <header>
+          <h2>About</h2>
+          <button class="content__tab--close">
+            <i class='bx bx-x'></i>
+          </button>
+        </header>
+
+      </article>
+      <article class="content__tab" id="project">
+        <header>
+          <h2>Project</h2>
+          <button class="content__tab--close">
+            <i class='bx bx-x'></i>
+          </button>
+        </header>
+
+      </article>
+      <article class="content__tab" id="contact">
+        <header>
+          <h2>Contact</h2>
+          <button class="content__tab--close">
+            <i class='bx bx-x'></i>
+          </button>
+        </header>
+
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="copyright">&copy; 2025 Hermit Codes. All Right Reserved.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
